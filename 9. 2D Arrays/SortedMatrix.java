@@ -63,7 +63,7 @@ public class SortedMatrix {
             return new int[]{rStart, cMid};
         }
         if (matrix[rStart + 1][cMid] == target) {
-            return new int[]{rStart, cMid};
+            return new int[]{rStart + 1, cMid};
         }
 
         //search in 1st half
@@ -72,7 +72,7 @@ public class SortedMatrix {
         }
 
         //search in 2nd half
-        if (target > matrix[rStart][cMid] && target <+ matrix[rStart][cols-1]) {
+        if (target > matrix[rStart][cMid] && target <= matrix[rStart][cols-1]) {
             return binarySearch(matrix, rStart, cMid+1, cols-1, target);
         }
 
